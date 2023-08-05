@@ -11,7 +11,7 @@ with open(training_text_file, 'r',encoding='utf-8') as input_file:
     for line in input_file.readlines():
         lines.append(line.strip())
 
-output_directory = 'tesstrain/data/Prompt-ground-truth'
+output_directory = 'tesstrain/data/NotoSansThai-ground-truth'
 
 if not os.path.exists(output_directory):
     os.mkdir(output_directory)
@@ -33,7 +33,7 @@ for line in lines:
 
     subprocess.run([
         'text2image',
-        '--font=Prompt',
+        '--font=Noto Sans Thai',
         f'--text={line_training_text}',
         f'--outputbase={output_directory}/{file_base_name}',
         '--max_pages=1',
